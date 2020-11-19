@@ -1,0 +1,51 @@
+/* Code By Webdevtrick ( https://webdevtrick.com ) */
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+
+fieldset{
+  border: none;
+}
+
+output{
+  display: inline-block;
+  min-width: 2.5em;
+}
+
+label, output{
+  padding: 2px 9px;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  font-size: 1.1em;
+}
+
+input[type=range] {
+  width: 100px;
+}
+
+label[for=r], output[for=r]{
+  background-color: #f00;
+}
+
+label[for=g], output[for=g]{
+  background-color: #0f0;
+}
+
+label[for=b], output[for=b]{
+  background-color: #00f;
+}
+
+#hexVal{
+  margin-top: 25px;
+  min-width: 4.5em;
+  font-size: 3em;
+  background: rgba(255,255,255,1);
+}
+
+#slider { float:left; }
+
+#koch { float:right;
+        border: groove; }
+
+#red { color: red; }
+
+#loadOrSaveFile { border: groove; }

@@ -1,0 +1,109 @@
+<html>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+attribute vec4 vColor;
+
+varying vec4 fColor;
+
+
+void main() {
+    gl_Position = vPosition;
+    fColor = vColor;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+varying vec4 fColor;
+void main() {
+    gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="Common/webgl-utils.js"></script>
+<script type="text/javascript" src="Common/initShaders.js"></script>
+<script type="text/javascript" src="Common/MV.js"></script>
+<script type="text/javascript" src="assignment1.js"></script>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<div>
+<canvas id="gl-canvas" width="512"" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</div>
+
+<a href="./out/assignment1.js.html">Click to see docs.</a>
+<div id="container" class="card-body">
+    <label id = "red"><b> Press "f" key to fill/unfill the polygon.</b></label>
+
+    <div id="slider" class="card-body">
+        <link rel="stylesheet" href="style.css">
+        <fieldset>
+          <label for="r">R</label>
+          <input type="range" min="0" max="255" id="r" step="1" value="0">
+          <output for="r" id="outputR">0</output>
+        </fieldset>
+
+        <fieldset>
+          <label for="g">G</label>
+          <input type="range" min="0" max="255" id="g" step="1" value="0">
+          <output for="g" id="outputG">0</output>
+        </fieldset>
+
+        <fieldset>
+          <label for="b">B</label>
+          <input type="range" min="0" max="255" id="b" step="1" value="0">
+          <output for="b" id="outputB">0</output>
+        </fieldset>
+        <button type="button" class="btn btn-dark" id="changeBg">Change canvas background color</button>
+        <p></p>
+    </div>
+
+    <div class="row">
+        <div id="koch">
+            <div class="card-body">
+                <label for="quantity">Number of iterations:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="6">
+                <div class="btn-group-horizontal">
+                    <button type="button" class="btn btn-info" id="drawKoch">Generate Koch Curve</button>
+                    <button type="button" class="btn btn-warning" id="clearKoch">Clear Koch Curve</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadOrSaveFile" class="card-body">
+            <div class="btn-group-vertical">
+                <label for="file-input">Load an existing file:</label>
+                <input type="file" id="file-input">
+                <div class="btn-group-horizontal">
+                    <button type="button" class="btn btn-primary" id="saveCanvas">Save Canvas</button>
+                    <button id="read-button" class="btn btn-secondary">Load File</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <output id="hexVal" style="visibility: hidden">#000000</output>
+</div>
+
+
+
+
+<script src="RGBslider.js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
